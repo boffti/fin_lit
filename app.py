@@ -194,8 +194,8 @@ def grade_quiz(id):
 
     return render_template(f'admin/{file_name}_grade.html', quiz=quiz, responses=responses)
 
-@app.route('/quiz/score/<int:id>', methods=['POST'])
-def score_quiz(id):
+@app.route('/quiz/score/<int:id>/<string:student_id>', methods=['POST'])
+def score_quiz(id, student_id):
     form_data = request.form.to_dict()
     try:
         match id:
@@ -210,7 +210,7 @@ def score_quiz(id):
             case 9: quiz = Quiz7
             case 10: quiz = Quiz8
             case 11: quiz = Quiz3
-        quiz_obj = quiz.query.filter_by(id=id).first()
+        quiz_obj = quiz.query.filter_by(student_id=student_id).first()
         quiz_obj.score = form_data['score']
         quiz_obj.update()
         return redirect(request.referrer)
