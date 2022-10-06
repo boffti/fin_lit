@@ -167,8 +167,8 @@ Fin Lit | Admin
                                 <td>{{ item.q5b }}</td>
                                 <td>{{ item.q5c }}</td>
                                 <td>
-                                    <form action="/quiz/score/{{ item.id }}" method="post">
-                                        <input type="text" class="form-control form-control-flush"
+                                    <form action="/quiz/score/{{ item.id }}/{{ item.student.id }}" method="post"></form>
+                                    <input type="text" class="form-control form-control-flush"
                                             name="score" placeholder="" value="{{ item.score if item.score else '' }}">
                                         <input type="submit" style="display: none" />
                                     </form>
