@@ -153,6 +153,32 @@ Fin Lit | Admin
                                 <th>Q20</th>
                                 <th>Q21</th>
                                 <th>Q22</th>
+                                <th>Q23</th>
+                                <th>Q24</th>
+                                <th>Q25</th>
+                                <th>Q26</th>
+                                <th>Q27</th>
+                                <th>Q28</th>
+                                <th>Q29</th>
+                                <th>Q30</th>
+                                <th>Q31</th>
+                                <th>Q32</th>
+                                <th>Q33</th>
+                                <th>Q34</th>
+                                <th>Q35</th>
+                                <th>Q36</th>
+                                <th>Q37</th>
+                                <th>Q38</th>
+                                <th>Q39</th>
+                                <th>Q40</th>
+                                <th>Q41</th>
+                                <th>Q42</th>
+                                <th>Q43</th>
+                                <th>Q44</th>
+                                <th>Q45</th>
+                                <th>Q46</th>
+                                <th>Q47</th>
+                                <th>Q48</th>
                                 <th>Score</th>
                             </tr>
                         </thead>
@@ -182,9 +208,35 @@ Fin Lit | Admin
                                 <td>{{ item.q20 }}</td>
                                 <td>{{ item.q21 }}</td>
                                 <td>{{ item.q22 }}</td>
+                                <td>{{ item.q23 }}</td>
+                                <td>{{ item.q24 }}</td>
+                                <td>{{ item.q25 }}</td>
+                                <td>{{ item.q26 }}</td>
+                                <td>{{ item.q27 }}</td>
+                                <td>{{ item.q28 }}</td>
+                                <td>{{ item.q29 }}</td>
+                                <td>{{ item.q30 }}</td>
+                                <td>{{ item.q31 }}</td>
+                                <td>{{ item.q32 }}</td>
+                                <td>{{ item.q33 }}</td>
+                                <td>{{ item.q34 }}</td>
+                                <td>{{ item.q35 }}</td>
+                                <td>{{ item.q36 }}</td>
+                                <td>{{ item.q37 }}</td>
+                                <td>{{ item.q38 }}</td>
+                                <td>{{ item.q39 }}</td>
+                                <td>{{ item.q40 }}</td>
+                                <td>{{ item.q41 }}</td>
+                                <td>{{ item.q42 }}</td>
+                                <td>{{ item.q43 }}</td>
+                                <td>{{ item.q44 }}</td>
+                                <td>{{ item.q45 }}</td>
+                                <td>{{ item.q46 }}</td>
+                                <td>{{ item.q47 }}</td>
+                                <td>{{ item.q48 }}</td>
                                 <td>
-                                    <form action="/quiz/score/1/{{ item.student.id }}" method="post">                                        
-                                        <input type="text" class="form-control form-control-flush"
+                                    <form action="/quiz/score/5/{{ item.student.id }}" method="post">
+                                    <input type="text" class="form-control form-control-flush"
                                             name="score" placeholder="" value="{{ item.score if item.score else '' }}">
                                         <input type="submit" style="display: none" />
                                     </form>

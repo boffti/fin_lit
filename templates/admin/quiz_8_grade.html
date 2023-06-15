@@ -138,21 +138,26 @@ Fin Lit | Admin
                                 <th>Q5</th>
                                 <th>Q6</th>
                                 <th>Q7</th>
-                                <th>Q8</th>
+                                
+                                <th>Q8N1a</th>
+                                <th>Q8N1d</th>
+                                <th>Q8P1a</th>
+                                <th>Q8P1d</th>
+                                
+                                <th>Q8N2a</th>
+                                <th>Q8N2d</th>
+                                <th>Q8P2a</th>
+                                <th>Q8P2d</th>
+                                
+                                <th>Q8N3a</th>
+                                <th>Q8N3d</th>
+                                <th>Q8P3a</th>
+                                <th>Q8P3d</th>
+                                
                                 <th>Q9</th>
                                 <th>Q10</th>
                                 <th>Q11</th>
-                                <th>Q12</th>
-                                <th>Q13</th>
-                                <th>Q14</th>
-                                <th>Q15</th>
-                                <th>Q16</th>
-                                <th>Q17</th>
-                                <th>Q18</th>
-                                <th>Q19</th>
-                                <th>Q20</th>
-                                <th>Q21</th>
-                                <th>Q22</th>
+                                
                                 <th>Score</th>
                             </tr>
                         </thead>
@@ -167,24 +172,29 @@ Fin Lit | Admin
                                 <td>{{ item.q5 }}</td>
                                 <td>{{ item.q6 }}</td>
                                 <td>{{ item.q7 }}</td>
-                                <td>{{ item.q8 }}</td>
+                                
+                                <td>{{ item.q8n1a }}</td>
+                                <td>{{ item.q8n1d }}</td>
+                                <td>{{ item.q8p1a }}</td>
+                                <td>{{ item.q8p1d }}</td>
+                                
+                                <td>{{ item.q8n2a }}</td>
+                                <td>{{ item.q8n2d }}</td>
+                                <td>{{ item.q8p2a }}</td>
+                                <td>{{ item.q8p2d }}</td>
+                                
+                                <td>{{ item.q8n3a }}</td>
+                                <td>{{ item.q8n3d }}</td>
+                                <td>{{ item.q8p3a }}</td>
+                                <td>{{ item.q8p3d }}</td>
+                                
                                 <td>{{ item.q9 }}</td>
                                 <td>{{ item.q10 }}</td>
                                 <td>{{ item.q11 }}</td>
-                                <td>{{ item.q12 }}</td>
-                                <td>{{ item.q13 }}</td>
-                                <td>{{ item.q14 }}</td>
-                                <td>{{ item.q15 }}</td>
-                                <td>{{ item.q16 }}</td>
-                                <td>{{ item.q17 }}</td>
-                                <td>{{ item.q18 }}</td>
-                                <td>{{ item.q19 }}</td>
-                                <td>{{ item.q20 }}</td>
-                                <td>{{ item.q21 }}</td>
-                                <td>{{ item.q22 }}</td>
+                                
                                 <td>
-                                    <form action="/quiz/score/1/{{ item.student.id }}" method="post">                                        
-                                        <input type="text" class="form-control form-control-flush"
+                                    <form action="/quiz/score/10/{{ item.student.id }}" method="post">
+                                    <input type="text" class="form-control form-control-flush"
                                             name="score" placeholder="" value="{{ item.score if item.score else '' }}">
                                         <input type="submit" style="display: none" />
                                     </form>

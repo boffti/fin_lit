@@ -131,37 +131,37 @@ def submit_quiz(id):
     try:
         match id:
             case 1:
-                new_response = Quiz1(id=id, student_id=session['user']['id'], **form_data)
+                new_response = Quiz1(student_id=session['user']['id'], **form_data)
                 new_response.insert()  
             case 2:
-                new_response = Quiz2(id=id, student_id=session['user']['id'], **form_data)
+                new_response = Quiz2(student_id=session['user']['id'], **form_data)
                 new_response.insert()
             case 3:
-                new_response = WorkBook1(id=id, student_id=session['user']['id'], **form_data)
+                new_response = WorkBook1(student_id=session['user']['id'], **form_data)
                 new_response.insert()
             case 4:
-                new_response = WorkBook2(id=id, student_id=session['user']['id'], **form_data)
+                new_response = WorkBook2(student_id=session['user']['id'], **form_data)
                 new_response.insert()
             case 9:
-                new_response = Quiz7(id=id, student_id=session['user']['id'], **form_data)
+                new_response = Quiz7(student_id=session['user']['id'], **form_data)
                 new_response.insert()
             case 8:
-                new_response = Quiz6(id=id, student_id=session['user']['id'], **form_data)
+                new_response = Quiz6(student_id=session['user']['id'], **form_data)
                 new_response.insert()
             case 5:
-                new_response = Test1(id=id, student_id=session['user']['id'], **form_data)
+                new_response = Test1(student_id=session['user']['id'], **form_data)
                 new_response.insert()
             case 6:
-                new_response = Quiz4(id=id, student_id=session['user']['id'], **form_data)
+                new_response = Quiz4(student_id=session['user']['id'], **form_data)
                 new_response.insert()
             case 7:
-                new_response = Quiz5(id=id, student_id=session['user']['id'], **form_data)
+                new_response = Quiz5(student_id=session['user']['id'], **form_data)
                 new_response.insert()
             case 10:
-                new_response = Quiz8(id=id, student_id=session['user']['id'], **form_data)
+                new_response = Quiz8(student_id=session['user']['id'], **form_data)
                 new_response.insert()
             case 11:
-                new_response = Quiz3(id=id, student_id=session['user']['id'], **form_data)
+                new_response = Quiz3(student_id=session['user']['id'], **form_data)
                 new_response.insert()
         return redirect(request.referrer)
     except Exception as e:
@@ -189,10 +189,13 @@ def grade_quiz(id):
             flash("Invalid")
             return redirect(request.referrer)
     responses = quiz_responses.query.all()
-    return render_template(f'admin/quiz_{id}_grade.html', quiz=quiz, responses=responses)
 
-@app.route('/quiz/score/<int:id>', methods=['POST'])
-def score_quiz(id):
+    file_name = quiz.file_name
+
+    return render_template(f'admin/{file_name}_grade.html', quiz=quiz, responses=responses)
+
+@app.route('/quiz/score/<int:id>/<string:student_id>', methods=['POST'])
+def score_quiz(id, student_id):
     form_data = request.form.to_dict()
     try:
         match id:
@@ -200,14 +203,14 @@ def score_quiz(id):
             case 2: quiz = Quiz2
             case 3: quiz = WorkBook1
             case 4: quiz = WorkBook2
-            case 9: quiz = Quiz7
-            case 8: quiz = Quiz6
             case 5: quiz = Test1
             case 6: quiz = Quiz4
             case 7: quiz = Quiz5
+            case 8: quiz = Quiz6
+            case 9: quiz = Quiz7
             case 10: quiz = Quiz8
             case 11: quiz = Quiz3
-        quiz_obj = quiz.query.filter_by(id=id).first()
+        quiz_obj = quiz.query.filter_by(student_id=student_id).first()
         quiz_obj.score = form_data['score']
         quiz_obj.update()
         return redirect(request.referrer)

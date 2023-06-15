@@ -153,6 +153,12 @@ Fin Lit | Admin
                                 <th>Q20</th>
                                 <th>Q21</th>
                                 <th>Q22</th>
+                                <th>Q23</th>
+                                <th>Q24</th>
+                                <th>Q25</th>
+                                <th>Q26</th>
+                                <th>Q27</th>
+                                <th>Q28</th>
                                 <th>Score</th>
                             </tr>
                         </thead>
@@ -182,9 +188,15 @@ Fin Lit | Admin
                                 <td>{{ item.q20 }}</td>
                                 <td>{{ item.q21 }}</td>
                                 <td>{{ item.q22 }}</td>
+                                <td>{{ item.q23 }}</td>
+                                <td>{{ item.q24 }}</td>
+                                <td>{{ item.q25 }}</td>
+                                <td>{{ item.q26 }}</td>
+                                <td>{{ item.q27 }}</td>
+                                <td>{{ item.q28 }}</td>
                                 <td>
-                                    <form action="/quiz/score/1/{{ item.student.id }}" method="post">                                        
-                                        <input type="text" class="form-control form-control-flush"
+                                    <form action="/quiz/score/9/{{ item.student.id }}" method="post">
+                                    <input type="text" class="form-control form-control-flush"
                                             name="score" placeholder="" value="{{ item.score if item.score else '' }}">
                                         <input type="submit" style="display: none" />
                                     </form>

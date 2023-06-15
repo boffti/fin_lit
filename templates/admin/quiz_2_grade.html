@@ -151,8 +151,6 @@ Fin Lit | Admin
                                 <th>Q18</th>
                                 <th>Q19</th>
                                 <th>Q20</th>
-                                <th>Q21</th>
-                                <th>Q22</th>
                                 <th>Score</th>
                             </tr>
                         </thead>
@@ -180,10 +178,8 @@ Fin Lit | Admin
                                 <td>{{ item.q18 }}</td>
                                 <td>{{ item.q19 }}</td>
                                 <td>{{ item.q20 }}</td>
-                                <td>{{ item.q21 }}</td>
-                                <td>{{ item.q22 }}</td>
                                 <td>
-                                    <form action="/quiz/score/1/{{ item.student.id }}" method="post">                                        
+                                    <form action="/quiz/score/2/{{ item.student.id }}" method="post">                                        
                                         <input type="text" class="form-control form-control-flush"
                                             name="score" placeholder="" value="{{ item.score if item.score else '' }}">
                                         <input type="submit" style="display: none" />
